@@ -1,0 +1,172 @@
+.header {
+    display: flex;
+    justify-content:space-around ;
+    align-items: center;
+    position: fixed;
+    background-color: white;
+    margin-bottom: 50px;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    z-index: 1;
+&__logo{
+    margin-left: -450px;
+}
+    &__navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: -300px;
+
+        &__link {
+            margin-left: 29px;
+            text-decoration: none;
+            color: rgba(13, 11, 11, 0.791);
+            font-size: 17px;
+        }
+    }
+
+    &__btn {
+        background: rgba(252, 183, 43, 1);
+        color: white;
+        border-color: white;
+        border: 1px solid;
+        margin-left: 20px;
+        width: 100px;
+        font-size: 14px;
+        padding: 5px;
+        margin-left: 500px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .header {
+        width: 98%;
+        justify-content: space-around;
+        &__navbar{
+            margin-left: 0;
+           justify-content: space-around;
+        }
+        &__logo{
+            margin-left: -120px;
+        }
+    &__btn{
+      margin-left: 80px;
+    }
+    }
+}
+
+@media screen and (max-width:375px) {
+    .header {
+        width: 90%;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        &__logo{
+            margin-right:120px; ;
+        }
+
+        &__navbar {
+            display: none;
+            flex-direction: column;
+            margin-top: 00px;
+            grid-column-start: 1;
+            grid-column-end: span 2;
+            width: 100%;
+            background-color: #333a44;
+
+            &__link {
+                margin: 20px;
+                font-size: 20px;
+                border-bottom: 2px solid;
+                width: 100%;
+                color: white;
+                padding-left: 20px;
+
+                &:hover {
+                    background-color: white;
+                    color: black;
+                    border: 1px solid white;
+                    border-radius: 15px;
+                    transition: 2s;
+                }
+
+            }
+
+            .header__btn {
+                width: 50%;
+                margin-bottom: 40px;
+                margin-top: 20px;
+                margin-left:0 ;
+
+                &:hover {
+                    background-color: black;
+                    border-radius: 0;
+                    transition: 2s;
+                }
+            }
+        }
+
+        .menu-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 60px;
+            right: 0;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            transition: all .5s ease-in-out;
+        }
+
+        .menu-btn__burger {
+            width: 40px;
+            height: 3px;
+            background:  rgba(252, 183, 43, 1);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+            transition: all .5s ease-in-out;
+        }
+
+        .menu-btn__burger::before,
+        .menu-btn__burger::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background:  rgba(252, 183, 43, 1);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+            transition: all .5s ease-in-out;
+        }
+
+        .menu-btn__burger::before {
+            transform: translateY(-16px);
+        }
+
+        .menu-btn__burger::after {
+            transform: translateY(16px);
+        }
+
+        /* ANIMATION */
+        .menu-btn.open .menu-btn__burger {
+            transform: translateX(-50px);
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .menu-btn.open .menu-btn__burger::before {
+            transform: rotate(45deg) translate(35px, -35px);
+        }
+
+        .menu-btn.open .menu-btn__burger::after {
+            transform: rotate(-45deg) translate(35px, 35px);
+        }
+    }
+
+}

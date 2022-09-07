@@ -1,0 +1,60 @@
+.app {
+    &__list {
+        display: flex;
+        width: 85%;
+        margin: 0 auto;
+        justify-content: space-around;
+        align-items: center;
+
+        &__item {
+            width: 30%;
+            margin-top: 70px;
+            margin-bottom: 70px;
+
+            img {
+                width: 20%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    .app {
+        &__list {
+            flex-direction: column;
+            width: 100%;
+
+            &__item {
+                width: 90%;
+                display: flex;
+                justify-content: space-around;
+                .card1{
+                    width: 60%;
+                }
+                img{
+                    width: 96px;
+                    height: 96px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:375px) {
+    .app{
+        &__list{
+            &__item{
+                display: block;
+                width: 90%;
+                text-align: center;
+                .card1{
+                    width: 90%;
+                }
+                img{
+                    margin-left: -30px;
+                }
+            }
+        }
+    }
+}

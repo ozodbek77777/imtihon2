@@ -1,0 +1,47 @@
+.sign{
+    display: flex;
+    justify-content: space-around;
+    background-image: url(/image/Mask2.png);
+    background-size: cover;
+    height: 300px;
+    align-items: center;
+    &__card{
+        width: 30%;
+        h2{
+            font-size: 45px;
+            color: white;
+        }
+    }
+    &__card2{
+        img{
+            margin-left: 30px;
+        }
+    }
+}
+@media screen and (max-width:768px) {
+    .sign{
+        flex-direction: column;
+        text-align: center;
+        &__card{
+            width: 80%;
+        }
+    }
+}
+@media screen and (max-width:375px) {
+    .sign{
+        flex-direction: column;
+        text-align: center;
+        &__card{
+            width: 80%;
+        }
+        &__card2{
+            img{
+                margin-left: 10px;
+                width: 40%;
+            }
+            img:nth-child(2){
+                height: 47px;
+            }
+    }
+    }
+}
